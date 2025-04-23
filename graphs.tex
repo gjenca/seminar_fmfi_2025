@@ -1,0 +1,37 @@
+\documentclass{article}
+\pagestyle{empty}
+\usepackage{pstricks}
+\usepackage{pst-node}
+\usepackage{pst-arrow}
+\usepackage{graphicx}
+
+\newcommand{\diaglength}{<<baselength|default('5.5em')>>}
+
+\begin{document}
+\thispagestyle{empty}
+\noindent
+\setlength{\unitlength}{\diaglength}
+\psset{xunit=\diaglength,yunit=-\diaglength}
+\begin{picture}(1,1)
+%% for diag in diags
+%% for node in diag.values()
+% <<dict(node)>>
+\cnode[fillcolor=black,fillstyle=solid]<<node.position>>{0.05}{<<node.name>>}
+\nput[labelsep=<<node.labelsep|default('2.5pt')>>]{<<node.label_angle|default('-90')>>}{<<node.name>>}{\small $<<node.label>>$}
+%% endfor
+%% for arrow in diag.arrows
+\ncline[arrowsize=5pt,nodesep=3pt,linecolor=<<arrow.color|default('black')>>,linewidth=<<arrow.linewidth|default('0.7pt')>>]{<<arrow.shape|default('-')>>}{<<arrow.from_node.name>>}{<<arrow.to_node.name>>}
+\naput{\small <<arrow.naput>>}
+\nbput{\small <<arrow.nbput>>}
+%% endfor
+%% for circle in diag.circles
+\nccircle[arrowsize=5pt,nodesep=2pt,linecolor=<<circle.color|default('black')>>,linewidth=<<circle.linewidth|default('0.7pt')>>,angleA=<<circle.angleA>>,angleB=<<circle.angleB>>]{<<circle.shape|default('-')>>}{<<circle.node.name>>}{10pt}
+\naput{\small <<circle.naput>>}
+\nbput{\small <<circle.nbput>>}
+%% endfor
+%% if diag.label and diag.label_at
+\rput<<diag.label_at>>{$<<diag.label>>$}
+%% endif
+%% endfor
+\end{picture}
+\end{document}

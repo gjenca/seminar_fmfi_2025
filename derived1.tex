@@ -1,0 +1,77 @@
+\documentclass{article}
+\pagestyle{empty}
+\usepackage{pstricks}
+\usepackage{pst-node}
+\usepackage{pst-arrow}
+\usepackage{graphicx}
+
+\newcommand{\diaglength}{5.5em}
+
+\begin{document}
+\thispagestyle{empty}
+\noindent
+\setlength{\unitlength}{\diaglength}
+\psset{xunit=\diaglength,yunit=-\diaglength}
+\begin{picture}(1,1)
+% {'label_angle': -45, 'label': 'a'}
+\cnode[fillcolor=black,fillstyle=solid](1, 3){0.05}{a}
+\nput[labelsep=2.5pt]{-45}{a}{\small $a$}
+% {'label_angle': 225, 'label': 'b'}
+\cnode[fillcolor=black,fillstyle=solid](2, 3){0.05}{b}
+\nput[labelsep=2.5pt]{225}{b}{\small $b$}
+\ncline[arrowsize=5pt,nodesep=3pt,linecolor=red,linewidth=0.7pt]{->}{a}{b}
+\naput{\small 2}
+\nbput{\small }
+\nccircle[arrowsize=5pt,nodesep=2pt,linecolor=blue,linewidth=0.7pt,angleA=90,angleB=270]{->}{a}{10pt}
+\naput{\small }
+\nbput{\small 1}
+\nccircle[arrowsize=5pt,nodesep=2pt,linecolor=black,linewidth=0.7pt,angleA=270,angleB=450]{<-}{b}{10pt}
+\naput{\small }
+\nbput{\small 1}
+% {'label_angle': 90, 'label': '(a,2)'}
+\cnode[fillcolor=black,fillstyle=solid](0, 0){0.05}{a2}
+\nput[labelsep=2.5pt]{90}{a2}{\small $(a,2)$}
+% {'label_angle': 90, 'label': '(b,1)'}
+\cnode[fillcolor=black,fillstyle=solid](3, 0){0.05}{b1}
+\nput[labelsep=2.5pt]{90}{b1}{\small $(b,1)$}
+% {'label_angle': 180, 'labelsep': '5pt', 'label': '(a,1)'}
+\cnode[fillcolor=black,fillstyle=solid](1, 1){0.05}{a1}
+\nput[labelsep=5pt]{180}{a1}{\small $(a,1)$}
+% {'label_angle': 0, 'labelsep': '3pt', 'label': '(b,0)'}
+\cnode[fillcolor=black,fillstyle=solid](2, 1){0.05}{b0}
+\nput[labelsep=3pt]{0}{b0}{\small $(b,0)$}
+% {'label_angle': 270, 'label': '(a,0)'}
+\cnode[fillcolor=black,fillstyle=solid](0, 2){0.05}{a0}
+\nput[labelsep=2.5pt]{270}{a0}{\small $(a,0)$}
+% {'label_angle': 270, 'label': '(b,2)'}
+\cnode[fillcolor=black,fillstyle=solid](3, 2){0.05}{b2}
+\nput[labelsep=2.5pt]{270}{b2}{\small $(b,2)$}
+\ncline[arrowsize=5pt,nodesep=3pt,linecolor=red,linewidth=0.7pt]{->}{a0}{b2}
+\naput{\small 0}
+\nbput{\small }
+\ncline[arrowsize=5pt,nodesep=3pt,linecolor=blue,linewidth=0.7pt]{->}{a0}{a1}
+\naput{\small }
+\nbput{\small 0}
+\ncline[arrowsize=5pt,nodesep=3pt,linecolor=black,linewidth=0.7pt]{->}{b0}{b1}
+\naput{\small 0}
+\nbput{\small }
+\ncline[arrowsize=5pt,nodesep=3pt,linecolor=red,linewidth=0.7pt]{->}{a1}{b0}
+\naput{\small 1}
+\nbput{\small }
+\ncline[arrowsize=5pt,nodesep=3pt,linecolor=blue,linewidth=0.7pt]{->}{a1}{a2}
+\naput{\small }
+\nbput{\small 1}
+\ncline[arrowsize=5pt,nodesep=3pt,linecolor=black,linewidth=0.7pt]{->}{b1}{b2}
+\naput{\small 1}
+\nbput{\small }
+\ncline[arrowsize=5pt,nodesep=3pt,linecolor=red,linewidth=0.7pt]{->}{a2}{b1}
+\naput{\small 2}
+\nbput{\small }
+\ncline[arrowsize=5pt,nodesep=3pt,linecolor=blue,linewidth=0.7pt]{->}{a2}{a0}
+\naput{\small }
+\nbput{\small 2}
+\ncline[arrowsize=5pt,nodesep=3pt,linecolor=black,linewidth=0.7pt]{->}{b2}{b0}
+\naput{\small 2}
+\nbput{\small }
+\end{picture}
+\end{document}

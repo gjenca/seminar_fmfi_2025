@@ -1,0 +1,53 @@
+\documentclass{article}
+\pagestyle{empty}
+\usepackage{pstricks}
+\usepackage{pst-node}
+\usepackage{pst-arrow}
+\usepackage{graphicx}
+
+\newcommand{\diaglength}{5.5em}
+
+\begin{document}
+\thispagestyle{empty}
+\noindent
+\setlength{\unitlength}{\diaglength}
+\psset{xunit=\diaglength,yunit=-\diaglength}
+\begin{picture}(1,1)
+% {'label_angle': -135, 'label': '0'}
+\cnode[fillcolor=black,fillstyle=solid](0, 0){0.05}{a}
+\nput[labelsep=2.5pt]{-135}{a}{\small $0$}
+% {'label_angle': -45, 'label': '0'}
+\cnode[fillcolor=black,fillstyle=solid](1, 0){0.05}{b}
+\nput[labelsep=2.5pt]{-45}{b}{\small $0$}
+% {'label_angle': 90, 'label': '1'}
+\cnode[fillcolor=black,fillstyle=solid](0.4999999999999999, -0.8660254037844386){0.05}{c}
+\nput[labelsep=2.5pt]{90}{c}{\small $1$}
+\ncline[arrowsize=5pt,nodesep=3pt,linecolor=black,linewidth=0.7pt]{->}{b}{a}
+\naput{\small }
+\nbput{\small }
+\ncline[arrowsize=5pt,nodesep=3pt,linecolor=black,linewidth=0.7pt]{->}{a}{c}
+\naput{\small }
+\nbput{\small }
+\ncline[arrowsize=5pt,nodesep=3pt,linecolor=black,linewidth=0.7pt]{->}{c}{b}
+\naput{\small }
+\nbput{\small }
+% {'label': ' '}
+\cnode[fillcolor=black,fillstyle=solid](1.5, 0){0.05}{a}
+\nput[labelsep=2.5pt]{-90}{a}{\small $ $}
+% {'label': ' '}
+\cnode[fillcolor=black,fillstyle=solid](2.5, 0){0.05}{b}
+\nput[labelsep=2.5pt]{-90}{b}{\small $ $}
+% {'label': ' '}
+\cnode[fillcolor=black,fillstyle=solid](2.0, -0.8660254037844386){0.05}{c}
+\nput[labelsep=2.5pt]{-90}{c}{\small $ $}
+\ncline[arrowsize=5pt,nodesep=3pt,linecolor=black,linewidth=0.7pt]{->}{b}{a}
+\naput{\small 0}
+\nbput{\small }
+\ncline[arrowsize=5pt,nodesep=3pt,linecolor=black,linewidth=0.7pt]{->}{a}{c}
+\naput{\small 1}
+\nbput{\small }
+\ncline[arrowsize=5pt,nodesep=3pt,linecolor=black,linewidth=0.7pt]{->}{c}{b}
+\naput{\small 2}
+\nbput{\small }
+\end{picture}
+\end{document}

@@ -1,0 +1,27 @@
+\documentclass{article}
+\pagestyle{empty}
+\usepackage{pstricks}
+\usepackage{pst-node}
+\usepackage{graphicx}
+
+\newcommand{\diaglength}{<<baselength|default('6em')>>}
+
+\begin{document}
+\thispagestyle{empty}
+\noindent
+\setlength{\unitlength}{\diaglength}
+\psset{xunit=\diaglength,yunit=-\diaglength}
+\begin{picture}<<diag.dimensions()>>
+%% for node in diag.values()
+\cnode[fillcolor=black,fillstyle=solid]<<node.position>>{0.1}{<<node.name>>}
+\nput{<<node.labelangle|default('-90')>>}{<<node.name>>}{$<<node.label>>$}
+%% endfor
+%% for arrow in diag.arrows
+%% if arrow.type=='arrow'
+\ncline[linecolor=<<arrow.color|default('black')>>]{->}{<<arrow.from_node.name>>}{<<arrow.to_node.name>>}
+%% else
+\ncline[linecolor=<<arrow.color|default('black')>>]{-}{<<arrow.from_node.name>>}{<<arrow.to_node.name>>}
+%% endif
+%% endfor
+\end{picture}
+\end{document}
