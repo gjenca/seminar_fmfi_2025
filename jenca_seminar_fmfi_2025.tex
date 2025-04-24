@@ -627,6 +627,7 @@ G
 \lG
 }
 \]
+Pullbacks in $\Graph$ are easy to describe, they can be computed basically the same way as in $\Set$. 
 \end{frame}
 \begin{frame}
 \frametitle{The projection is a covering}
@@ -673,6 +674,53 @@ R(G,\alpha)\to (G,\alpha)$ is a covering.
 \item $\epsilon_{G,\alpha}$ is a pullback of $q_{\Gamma}$, and it is surjective.
 \end{itemize}
 \end{proof}
+\end{frame}
+\begin{frame}
+Main results of the paper:
+\begin{itemize}
+\item There are categories $\Volt$, $\Lab$ (over all groups, $\Gamma$ is not fixed).
+\[
+\xymatrix{
+D(G)
+	\ar[r]^{f^D}
+	\ar[d]_\alpha
+&
+D(G')
+	\ar[d]^{\alpha'}
+\\
+\Gamma
+	\ar[r]_h
+&
+\Gamma'
+}
+\quad
+\xymatrix{
+V(G)
+	\ar[r]^{f^V}
+	\ar[d]_\beta
+&
+V(G')
+	\ar[d]^{\beta'}
+\\
+\Gamma
+	\ar[r]_h
+&
+\Gamma'
+}
+\]
+\item The voltage graph lift arises from an adjunction
+$$
+\xymatrix{
+\Lab
+	\ar@/^1.2pc/[rr]^-L
+&
+\bot
+&
+\Volt
+	\ar@/^1.2pc/[ll]^-R
+}
+$$
+\end{itemize}
 \end{frame}
 \begin{frame}
 \hfill
